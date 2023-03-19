@@ -1,0 +1,22 @@
+.banner {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.home__container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+}
+
+.title {
+    margin: 20px;
+}
+
+.products__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

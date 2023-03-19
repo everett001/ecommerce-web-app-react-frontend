@@ -1,0 +1,29 @@
+.product__container {
+    width: 256px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-rows: 180px auto 36px;
+    row-gap: 10px;
+}
+
+.product__container:hover {
+    background: #FAFAFA;
+}
+
+.product__img {
+    width: 100%;
+}
+
+.product__title {
+    padding: 0 5px;
+}
+
+.product__sub__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.product__btn {
+    padding: 5px;
+}

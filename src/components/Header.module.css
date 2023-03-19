@@ -5,6 +5,9 @@
     background: #424242;
     color: white;
     padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav img {
@@ -31,9 +34,33 @@
     display: flex;
 }
 
-.icon {
-    margin-right: 5px;
+.cart__icon {
+    position: relative;
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
     cursor: pointer;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 32px;
+}
+
+.count {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 12px;
+    font-weight: 800;
+    width: 100%;
+    height: 100%;
 }
 
 .favIcon {
