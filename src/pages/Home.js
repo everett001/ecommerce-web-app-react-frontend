@@ -67,7 +67,7 @@ const DUMMY_DATA = [
 
 function HomePage() {
     return (
-        <div>
+        <div className={classes.home}>
             <img className={classes.banner} src={Banner} alt="banner" />
             <div className={classes.home__container}>
                 <h1 className={classes.title}>Latest Products</h1>

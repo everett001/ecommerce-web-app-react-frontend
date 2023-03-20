@@ -8,6 +8,7 @@ function Product(props) {
     function addItemHandler() {
         cartCtx.addItem({
             id: props.id,
+            img: props.img,
             title: props.title,
             price: props.price
         })

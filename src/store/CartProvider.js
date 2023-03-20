@@ -10,12 +10,27 @@ function cartReducer(state, action) {
     if (action.type === 'ADD_ITEM') {
         const updatedItems = state.items.concat(action.item);
         const updatedTotalAmount = state.totalAmount + +action.item.price;
-        console.log(updatedItems, updatedTotalAmount)
         return {
             items: updatedItems,
             totalAmount: updatedTotalAmount
         }
     }
+
+    if (action.type === 'REMOVE_ITEM') {
+        const index = state.items.findIndex(
+            (item) => item.id === action.id
+        );
+        let newItems = [...state.items];
+
+        if (index >= 0) {
+            newItems.splice(index, 1)
+        }
+        return {
+            ...state,
+            items: newItems
+        }
+    }
+
     return defaultCartState
 };
 

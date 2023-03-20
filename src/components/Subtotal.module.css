@@ -1,0 +1,31 @@
+.subtotal {
+    background: white;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.subtotal__price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.subtotal__amount {
+    font-weight: 500;
+}
+
+.checkout__btn {
+    width: 100%;
+    background: #66BB6A;
+    border: #66BB6A;
+    padding: 13px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.checkout__btn:hover {
+    background: #4CAF50;
+    border: #4CAF50;
+}

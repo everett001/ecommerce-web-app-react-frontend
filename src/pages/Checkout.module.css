@@ -1,0 +1,24 @@
+.checkout {
+    background: #eee;
+    height: 100vh;
+}
+
+.checkout__container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.checkout__content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    width: 100%;
+    column-gap: 25px;
+}
+
+.checkout__empty {
+    text-align: center;
+}
