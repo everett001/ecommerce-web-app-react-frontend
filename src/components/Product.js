@@ -1,17 +1,20 @@
-import { useContext } from 'react';
-import CartContext from '../store/cart-context';
 import classes from './Product.module.css';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../store/cart';
 
 function Product(props) {
-    const cartCtx = useContext(CartContext);
+    const dispatch = useDispatch();
 
     function addItemHandler() {
-        cartCtx.addItem({
-            id: props.id,
-            img: props.img,
-            title: props.title,
-            price: props.price
-        })
+        dispatch(cartActions.add_item({
+            item: {
+                id: props.id,
+                img: props.img,
+                title: props.title,
+                price: props.price,
+                quantity: 1
+            }
+        }));
     }
 
     return (

@@ -20,6 +20,11 @@
     font-weight: 400;
 }
 
+.checkout_detail {
+    display: flex;
+    justify-content: space-between;
+}
+
 .checkout__price {
     font-size: 18px;
     font-weight: 400;

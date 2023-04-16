@@ -1,4 +1,4 @@
-import Banner from "../assests/banner.jpg";
+import Banner from "../assets/banner.jpg";
 import Product from "../components/Product";
 import classes from './Home.module.css';
 
@@ -70,7 +70,7 @@ function HomePage() {
         <div className={classes.home}>
             <img className={classes.banner} src={Banner} alt="banner" />
             <div className={classes.home__container}>
-                <h1 className={classes.title}>Latest Products</h1>
+                <h1 className={classes.title}>Best Sellers</h1>
                 <div className={classes.products__container}>
                     {DUMMY_DATA.map((item) => <Product key={item.id} id={item.id} img={item.img} title={item.title} price={item.price} />)}
                 </div>

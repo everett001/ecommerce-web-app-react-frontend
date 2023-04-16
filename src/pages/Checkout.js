@@ -1,19 +1,18 @@
-import { useContext } from 'react';
 import CheckoutItem from '../components/CheckoutItem';
 import Subtotal from '../components/Subtotal';
-import CartContext from '../store/cart-context';
 import classes from './Checkout.module.css';
+import { useSelector } from 'react-redux';
 
 function Checkout() {
-    const cartCtx = useContext(CartContext);
+    const items = useSelector(state => state.cart.items);
 
     const cartContent = (
         <>
             <h1>Your Cart</h1>
             <div className={classes.checkout__content}>
                 <div className={classes.checkout__left}>
-                    {cartCtx.items.map(item => (
-                        <CheckoutItem key={item.id} id={item.id} img={item.img} title={item.title} price={item.price} />
+                    {items.map(item => (
+                        <CheckoutItem key={item.id} id={item.id} img={item.img} title={item.title} price={item.price} quantity={item.quantity}/>
                     ))}
                 </div>
                 <div className={classes.checkout__right}>
@@ -25,8 +24,8 @@ function Checkout() {
 
     return <div className={classes.checkout}>
         <div className={classes.checkout__container}>
-            {cartCtx.items.length === 0 && <h1 className={classes.checkout__empty}>Your cart is empty</h1>}
-            {cartCtx.items.length > 0 && cartContent}
+            {items.length === 0 && <h1 className={classes.checkout__empty}>Your cart is empty</h1>}
+            {items.length > 0 && cartContent}
         </div>
     </div>
 }

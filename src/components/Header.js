@@ -1,18 +1,20 @@
 import { Link } from 'react-router-dom';
 import classes from './Header.module.css';
-import Logo from '../assests/logoipsum-228.svg';
-import SearchIcon from '@mui/icons-material/Search';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import { useContext, useState } from 'react';
-import CartContext from '../store/cart-context';
+import {
+    SearchOutlined,
+    PersonOutline,
+    FavoriteOutlined,
+    ShoppingBagOutlined,
+    MenuOutlined,
+    CloseOutlined
+} from '@mui/icons-material';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { IconButton, Badge } from '@mui/material';
 
 function Header() {
     const [toggle, setToggle] = useState(false);
-
-    const cartCtx = useContext(CartContext);
+    const numberOfItems = useSelector(state => state.cart.totalNumberOfItems);
 
     function openMenu() {
         setToggle(toggle => !toggle);
@@ -20,32 +22,44 @@ function Header() {
 
     return <>
         <nav className={classes.nav}>
-            <Link to="/">
-                <img src={Logo} alt="" />
-            </Link>
-            <div>
-                <ul className={`${classes.navbar} ${toggle && classes.active}`}>
-                    <li>SALE</li>
-                    <li>LATEST</li>
-                    <li>BRANDS</li>
-                    <li>CLOTHING</li>
-                    <li>FOOTWEAR</li>
-                </ul>
-            </div>
-            <div className={classes.icons}>
-                <SearchIcon className={classes.icon} />
-                <FavoriteIcon className={classes.favIcon + ' ' + classes.icon} />
-
-                <div className={classes.cart__icon}>
-                    <Link to="/checkout" className={classes.link}>
-                        <ShoppingBagIcon className={classes.icon} />
-                        <p className={classes.count}>{cartCtx.items.length}</p>
-                    </Link>
+            <div className={classes.nav__container}>
+                <Link to="/">
+                    <div className={classes.logo}>
+                        <p>Small<br /> Store</p>
+                    </div>
+                </Link>
+                <div>
+                    <ul className={`${classes.navbar} ${toggle && classes.active}`}>
+                        <li>SALE</li>
+                        <li>LATEST</li>
+                        <li>BRANDS</li>
+                        <li>CLOTHING</li>
+                        <li>FOOTWEAR</li>
+                    </ul>
                 </div>
-
-                <div className={classes.mobile + ' ' + classes.icon} onClick={openMenu}>
-                    {!toggle && <MenuIcon />}
-                    {toggle && <CloseIcon />}
+                <div className={classes.icons}>
+                    <IconButton sx={{ color: "white" }}>
+                        <SearchOutlined />
+                    </IconButton>
+                    <IconButton sx={{ color: "white" }}>
+                        <PersonOutline />
+                    </IconButton>
+                    <IconButton sx={{ color: "white" }}>
+                        <FavoriteOutlined />
+                    </IconButton>
+                    <Link to="/checkout" className={classes.link}>
+                        <Badge badgeContent={numberOfItems} color='error'>
+                            <IconButton sx={{ color: "white" }}>
+                                <ShoppingBagOutlined />
+                            </IconButton>
+                        </Badge>
+                    </Link>
+                    <div className={classes.mobile} onClick={openMenu}>
+                        <IconButton sx={{ color: "white" }}>
+                            {!toggle && <MenuOutlined />}
+                            {toggle && <CloseOutlined />}
+                        </IconButton>
+                    </div>
                 </div>
             </div>
         </nav>
