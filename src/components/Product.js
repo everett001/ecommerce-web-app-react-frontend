@@ -1,11 +1,14 @@
 import classes from './Product.module.css';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/cart';
+import { useNavigate } from 'react-router-dom';
 
 function Product(props) {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    function addItemHandler() {
+    function addItemHandler(e) {
+        e.stopPropagation();
         dispatch(cartActions.add_item({
             item: {
                 id: props.id,
@@ -18,7 +21,7 @@ function Product(props) {
     }
 
     return (
-        <div className={classes.product__container}>
+        <div className={classes.product__container} onClick={() => navigate(`/item/${props.id}`)}>
             <img className={classes.product__img} src={props.img} alt="" />
             <div className={classes.product__content}>
                 <p>{props.title}</p>

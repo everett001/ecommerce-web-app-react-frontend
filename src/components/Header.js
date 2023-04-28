@@ -3,7 +3,7 @@ import classes from './Header.module.css';
 import {
     SearchOutlined,
     PersonOutline,
-    FavoriteOutlined,
+    FavoriteBorderOutlined,
     ShoppingBagOutlined,
     MenuOutlined,
     CloseOutlined
@@ -45,7 +45,7 @@ function Header() {
                         <PersonOutline />
                     </IconButton>
                     <IconButton>
-                        <FavoriteOutlined />
+                        <FavoriteBorderOutlined />
                     </IconButton>
                     <Link to="/checkout" className={classes.link}>
                         <Badge badgeContent={numberOfItems} color='error'>
