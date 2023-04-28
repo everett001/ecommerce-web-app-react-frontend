@@ -20,10 +20,13 @@ function Product(props) {
     return (
         <div className={classes.product__container}>
             <img className={classes.product__img} src={props.img} alt="" />
-            <p className={classes.product__title}>{props.title}</p>
-            <div className={classes.product__sub__container}>
-                <p>${props.price}</p>
-                <button className={classes.product__btn} onClick={addItemHandler}>Add to Cart</button>
+            <div className={classes.product__content}>
+                <p>{props.title}</p>
+                <p className={classes.product__color}>{props.color}</p>
+                <div className={classes.product__sub__container}>
+                    <p>${props.price}</p>
+                    <button className={classes.product__btn} onClick={addItemHandler}>ADD TO CART</button>
+                </div>
             </div>
         </div>
     )

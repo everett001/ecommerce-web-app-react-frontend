@@ -22,6 +22,11 @@
 .text {
     margin-bottom: 30px;
     color: gray;
+    cursor: pointer;
+}
+
+.text:hover {
+    color: black;
 }
 
 .socials {
