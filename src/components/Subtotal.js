@@ -1,14 +1,13 @@
-import { useContext } from 'react';
-import CartContext from '../store/cart-context';
+import { useSelector } from 'react-redux';
 import classes from './Subtotal.module.css';
 
 function Subtotal() {
-    const cartCtx = useContext(CartContext);
+    const total = useSelector(state => state.cart.totalAmount);
 
     return <div className={classes.subtotal}>
         <div className={classes.subtotal__price}>
             <p>Subtotal</p>
-            <p>${cartCtx.totalAmount}</p>
+            <p>${total}</p>
         </div>
         <button className={classes.checkout__btn} >Checkout</button>
     </div>

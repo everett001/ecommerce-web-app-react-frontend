@@ -2,8 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #424242;
-    color: white;
+    /* background: #424242; */
+    background: white;
+    /* color: white; */
     padding: 10px 0px;
     position: sticky;
     top: 0;
@@ -38,12 +39,15 @@
 
 .navbar li {
     list-style: none;
-    padding: 0 20px;
+    padding: 6px 20px;
     position: relative;
+    cursor: pointer;
+    color: gray;
 }
 
 .navbar li:hover {
-    border-bottom: solid 1px;
+    color: black;
+    border-bottom: solid 3px;
 }
 
 .icons {
@@ -68,11 +72,12 @@
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
-        top: 87px;
+        top: 71px;
         right: -300px;
         width: 300px;
         height: 100vh;
-        background: #757575;
+        /* background: #757575; */
+        background: white;
         padding: 40px 0 0 10px;
         transition: 0.3s ease-in-out;
     }

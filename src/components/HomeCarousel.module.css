@@ -1,0 +1,33 @@
+.banner {
+    height: 700px;
+}
+
+.button {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    padding: 15px;
+    width: 200px;
+    background: transparent;
+    border-color: white;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.button:hover {
+    background: white;
+    color: black;
+}
+
+@media screen and (max-width:769px) {
+    .banner {
+        height: 300px;
+    }
+
+    .button {
+        bottom: 8%;
+        right: 25%;
+    }
+}

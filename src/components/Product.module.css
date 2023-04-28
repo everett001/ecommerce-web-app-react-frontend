@@ -26,4 +26,5 @@
 
 .product__btn {
     padding: 5px;
+    cursor: pointer;
 }

@@ -38,24 +38,24 @@ function Header() {
                     </ul>
                 </div>
                 <div className={classes.icons}>
-                    <IconButton sx={{ color: "white" }}>
+                    <IconButton>
                         <SearchOutlined />
                     </IconButton>
-                    <IconButton sx={{ color: "white" }}>
+                    <IconButton>
                         <PersonOutline />
                     </IconButton>
-                    <IconButton sx={{ color: "white" }}>
+                    <IconButton>
                         <FavoriteOutlined />
                     </IconButton>
                     <Link to="/checkout" className={classes.link}>
                         <Badge badgeContent={numberOfItems} color='error'>
-                            <IconButton sx={{ color: "white" }}>
+                            <IconButton>
                                 <ShoppingBagOutlined />
                             </IconButton>
                         </Badge>
                     </Link>
                     <div className={classes.mobile} onClick={openMenu}>
-                        <IconButton sx={{ color: "white" }}>
+                        <IconButton>
                             {!toggle && <MenuOutlined />}
                             {toggle && <CloseOutlined />}
                         </IconButton>

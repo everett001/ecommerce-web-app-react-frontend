@@ -1,4 +1,5 @@
-import Banner from "../assets/banner.jpg";
+import HomeCarousel from "../components/HomeCarousel";
+import Header from "../components/Header";
 import Product from "../components/Product";
 import classes from './Home.module.css';
 
@@ -67,15 +68,18 @@ const DUMMY_DATA = [
 
 function HomePage() {
     return (
-        <div className={classes.home}>
-            <img className={classes.banner} src={Banner} alt="banner" />
-            <div className={classes.home__container}>
-                <h1 className={classes.title}>Best Sellers</h1>
-                <div className={classes.products__container}>
-                    {DUMMY_DATA.map((item) => <Product key={item.id} id={item.id} img={item.img} title={item.title} price={item.price} />)}
+        <>
+            <Header />
+            <div className={classes.home}>
+                <HomeCarousel />
+                <div className={classes.home__container}>
+                    <h1 className={classes.title}>Best Sellers</h1>
+                    <div className={classes.products__container}>
+                        {DUMMY_DATA.map((item) => <Product key={item.id} id={item.id} img={item.img} title={item.title} price={item.price} />)}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 };
 
