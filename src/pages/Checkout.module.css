@@ -1,6 +1,5 @@
 .checkout {
     background: #eee;
-    height: 100vh;
 }
 
 .checkout__container {
@@ -9,7 +8,7 @@
     max-width: 1500px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 60px;
 }
 
 .checkout__content {
@@ -21,4 +20,23 @@
 
 .checkout__empty {
     text-align: center;
+}
+
+.checkout__empty__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.checkout__wishlist__btn {
+    color: #444444;
+    background: #dbdbdb;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.checkout__wishlist__btn:hover {
+    background: #c7c7c7;
 }

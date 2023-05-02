@@ -12,7 +12,8 @@ function CheckoutItem(props) {
                 img: props.img,
                 title: props.title,
                 price: props.price,
-                quantity: 1
+                quantity: 1,
+                size: props.size
             }
         }));
     }
@@ -22,8 +23,12 @@ function CheckoutItem(props) {
             <img className={classes.checkout__item__img} src={props.img} alt="" />
             <div className={classes.checkout__item__info}>
                 <p className={classes.checkout__title}>{props.title}</p>
-                <div className={classes.checkout_detail}>
-                    <p className={classes.checkout__price}>Quantity: {props.quantity}</p>
+                <div className={classes.checkout__details}>
+                    <div className={classes.checkout__item__details}>
+                        <p className={classes.checkout__price}>{props.color}  •</p>
+                        <p className={classes.checkout__price}>US {props.size}  •</p>
+                        <p className={classes.checkout__price}>Qty {props.quantity}</p>
+                    </div>
                     <p className={classes.checkout__price}>$ {props.price}</p>
                 </div>
                 <button className={classes.checkout__button} onClick={removeItemHandler}>Remove from cart</button>

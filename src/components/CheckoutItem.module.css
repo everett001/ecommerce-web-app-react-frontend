@@ -18,11 +18,17 @@
 .checkout__title {
     font-size: 22px;
     font-weight: 400;
+    margin-bottom: 10px;
 }
 
-.checkout_detail {
+.checkout__details {
     display: flex;
     justify-content: space-between;
+}
+
+.checkout__item__details {
+    display: flex;
+    column-gap: 10px;
 }
 
 .checkout__price {

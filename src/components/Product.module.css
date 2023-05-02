@@ -9,6 +9,10 @@
     background: #FAFAFA;
 } */
 
+.product__container:hover .product__title {
+    color: #212121;
+}
+
 .product__img {
     width: 100%;
 }
@@ -17,6 +21,10 @@
     padding: 0 5px;
     display: grid;
     row-gap: 10px;
+}
+
+.product__title {
+    color: #616161;
 }
 
 .product__color {
@@ -28,18 +36,4 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.product__btn {
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #FFFFFF;
-    background: #444444;
-    border-radius: 5px;
-    border: 0;
-}
-
-.product__btn:hover {
-    background: #1a1a1a;
 }

@@ -7,70 +7,70 @@ const initialCartState = {
             img: 'https://media.gq.com/photos/599a64b2d48ec673e16de47d/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-air-jordan.jpg',
             title: 'Air Jordan 1 x Virgil Abloh',
             color: 'Red',
-            price: '299'
+            price: 4812
         },
         {
             id: '222',
             img: 'https://media.gq.com/photos/599a64b138899e6ab3b11aee/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-zoom-vaporfly.jpg',
             title: 'Nike Zoom Vaporfly x Virgil Abloh',
             color: 'White',
-            price: '299'
+            price: 907
         },
         {
             id: '333',
             img: 'https://media.gq.com/photos/599a64b08aaf3516506b9655/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-blazer.jpg',
             title: 'Nike Blazer x Virgil Abloh',
             color: 'White',
-            price: '299'
+            price: 1546
         },
         {
             id: '444',
             img: 'https://media.gq.com/photos/599a64b06b4c0e160ac51606/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-vapor-max.jpg',
             title: 'Nike Air VaporMax x Virgil Abloh',
             color: 'Black',
-            price: '299'
+            price: 5203
         },
         {
             id: '555',
             img: 'https://media.gq.com/photos/599a64b0d48ec673e16de479/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-air-max-90.jpg',
             title: 'Nike Air Max 90 x Virgil Abloh',
             color: 'White',
-            price: '299'
+            price: 1939
         },
         {
             id: '666',
             img: 'https://media.gq.com/photos/599a64afd9e6b31cec0323d2/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-chuck-taylor.jpg',
             title: 'Converse Chuck Taylor x Virgil Abloh',
             color: 'White',
-            price: '299'
+            price: 1906
         },
         {
             id: '777',
             img: 'https://media.gq.com/photos/599a64b1d48ec673e16de47b/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-react-hyperfly.jpg',
             title: 'Nike React Hyperdunk 2017 x Virgil Abloh',
             color: 'White',
-            price: '299'
+            price: 2897
         },
         {
             id: '888',
             img: 'https://media.gq.com/photos/599a64af38899e6ab3b11aec/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-air-max-97.jpg',
             title: 'Nike Air Max 97 x Virgil Abloh',
             color: 'White',
-            price: '299'
+            price: 1231
         },
         {
             id: '999',
             img: 'https://media.gq.com/photos/599a64b101e054755c42cb0d/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-air-presto.jpg',
             title: 'Nike Air Presto x Virgil Abloh',
             color: 'Black',
-            price: '299'
+            price: 2078
         },
         {
             id: '101010',
             img: 'https://media.gq.com/photos/599a64af8aaf3516506b9653/master/w_1920%2Cc_limit/virgil-abloh-the-ten-nike-air-force-one.jpg',
             title: 'Nike Air Force 1 Low x Virgil Abloh',
             color: 'White',
-            price: '299'
+            price: 2705
         },
     ],
     items: [],
@@ -84,7 +84,7 @@ const cartSlice = createSlice({
     reducers: {
         add_item(state, action) {
             const checkIfItemExist = state.items.findIndex(
-                (item) => item.id === action.payload.item.id
+                (item) => ((item.id === action.payload.item.id) && (item.size === action.payload.item.size))
             );
             const check = state.items[checkIfItemExist];
             if (check) {
@@ -97,13 +97,13 @@ const cartSlice = createSlice({
         },
         remove_item(state, action) {
             const checkIfItemExist = state.items.findIndex(
-                (item) => item.id === action.payload.item.id
+                (item) => ((item.id === action.payload.item.id) && (item.size === action.payload.item.size))
             );
             const check = state.items[checkIfItemExist];
             state.totalAmount = state.totalAmount - action.payload.item.price;
             state.totalNumberOfItems = state.totalNumberOfItems - action.payload.item.quantity;
             if (check.quantity === 1) {
-                state.items = state.items.filter(item => item.id !== action.payload.item.id);
+                state.items = state.items.filter(item => (item.id !== action.payload.item.id || (item.id === action.payload.item.id && item.size !== action.payload.item.size)));
             } else {
                 check.quantity = check.quantity - 1
             }

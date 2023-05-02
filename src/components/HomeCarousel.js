@@ -33,7 +33,7 @@ const HomeCarousel = () => {
     return (
         <Carousel showStatus={false} showThumbs={false} infiniteLoop={true} showIndicators={false} autoPlay={true} stopOnHover={true} swipeable={true} emulateTouch={true}>
             {banners.map((item) =>
-                <div>
+                <div key={item.id}>
                     <img src={item.img} alt="" className={classes.banner} />
                     <button className={classes.button}>{item.btnText}</button>
                 </div>

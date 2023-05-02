@@ -41,9 +41,11 @@ function Header() {
                     <IconButton>
                         <SearchOutlined />
                     </IconButton>
-                    <IconButton>
-                        <PersonOutline />
-                    </IconButton>
+                    <Link to="/login">
+                        <IconButton>
+                            <PersonOutline />
+                        </IconButton>
+                    </Link>
                     <IconButton>
                         <FavoriteBorderOutlined />
                     </IconButton>
