@@ -13,12 +13,12 @@ function Checkout() {
         <>
             <h1>Your Cart</h1>
             <div className={classes.checkout__content}>
-                <div className={classes.checkout__left}>
+                <div>
                     {items.map(item => (
                         <CheckoutItem key={item.id + '_' + item.size} id={item.id} img={item.img} title={item.title} price={item.price} quantity={item.quantity} color={item.color} size={item.size} />
                     ))}
                 </div>
-                <div className={classes.checkout__right}>
+                <div>
                     <Subtotal />
                 </div>
             </div>

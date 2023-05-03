@@ -16,16 +16,15 @@
 
 .checkout__btn {
     width: 100%;
-    background: #66BB6A;
-    border: #66BB6A;
-    padding: 13px;
+    background: #444444;
+    border: 0;
+    padding: 15px;
     border-radius: 5px;
-    color: white;
+    color: #FFFFFF;
     cursor: pointer;
     margin-top: 20px;
 }
 
 .checkout__btn:hover {
-    background: #4CAF50;
-    border: #4CAF50;
+    background: #1a1a1a;
 }

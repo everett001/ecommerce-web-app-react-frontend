@@ -25,13 +25,15 @@ function CheckoutItem(props) {
                 <p className={classes.checkout__title}>{props.title}</p>
                 <div className={classes.checkout__details}>
                     <div className={classes.checkout__item__details}>
-                        <p className={classes.checkout__price}>{props.color}  •</p>
-                        <p className={classes.checkout__price}>US {props.size}  •</p>
-                        <p className={classes.checkout__price}>Qty {props.quantity}</p>
+                        <p>{props.color}  •</p>
+                        <p>US {props.size}  •</p>
+                        <p>Qty {props.quantity}</p>
                     </div>
-                    <p className={classes.checkout__price}>$ {props.price}</p>
+                    <p>$ {props.price}</p>
                 </div>
-                <button className={classes.checkout__button} onClick={removeItemHandler}>Remove from cart</button>
+                <div className={classes.btn__container}>
+                    <button className={classes.checkout__button} onClick={removeItemHandler}>Remove from cart</button>
+                </div>
             </div>
         </div>
     )
