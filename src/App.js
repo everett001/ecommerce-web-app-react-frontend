@@ -10,6 +10,7 @@ import LoginPage from './pages/Login';
 import Signup from './pages/Signup';
 import ItemDetails from './pages/ItemDetails';
 import { useEffect } from 'react';
+import Profile from './pages/Profile';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -31,6 +32,7 @@ function App() {
         <Route path="/item/:itemId" element={<ItemDetails />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   )

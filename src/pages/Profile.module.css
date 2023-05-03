@@ -1,0 +1,40 @@
+.profile {
+    width: 60%;
+    margin: 80px auto;
+}
+
+.username {
+    color: #616161;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+.profile__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+.card {
+    border: 1px solid lightgray;
+    text-align: center;
+    padding: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: #F5F5F5;
+}
+
+@media screen and (max-width:769px) {
+    .profile__container {
+        grid-template-columns: 1fr;
+    }
+}

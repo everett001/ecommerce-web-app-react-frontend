@@ -50,7 +50,7 @@ const ItemDetails = () => {
                         <div className={`${classes.size} ${size === '11' ? classes.selected : ''}`} onClick={() => setSize('11')}>US 11</div>
                     </div>
                     <button className={classes.cartBtn} onClick={addItemHandler}>ADD TO CART</button>
-                    <button className={classes.favBtn}>ADD TO WISHLIST</button>
+                    <button className={classes.favBtn}>ADD TO WISH LIST</button>
                     <hr></hr>
                     <p className={classes.desc}>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.

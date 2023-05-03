@@ -9,15 +9,24 @@ import {
     CloseOutlined
 } from '@mui/icons-material';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { IconButton, Badge } from '@mui/material';
+import { userActions } from '../store/user';
 
 function Header() {
+    const dispatch = useDispatch();
     const [toggle, setToggle] = useState(false);
     const numberOfItems = useSelector(state => state.cart.totalNumberOfItems);
+    const username = useSelector(state => state.user.user?.username);
 
     function openMenu() {
         setToggle(toggle => !toggle);
+    }
+
+    const logout = () => {
+        dispatch(
+            userActions.setLogout()
+        );
     }
 
     return <>
@@ -35,13 +44,14 @@ function Header() {
                         <li>BRANDS</li>
                         <li>CLOTHING</li>
                         <li>FOOTWEAR</li>
+                        <li className={classes.mobile} onClick={logout}>LOGOUT</li>
                     </ul>
                 </div>
                 <div className={classes.icons}>
                     <IconButton>
                         <SearchOutlined />
                     </IconButton>
-                    <Link to="/login">
+                    <Link to={username ? "/profile" : '/login'}>
                         <IconButton>
                             <PersonOutline />
                         </IconButton>
@@ -56,6 +66,7 @@ function Header() {
                             </IconButton>
                         </Badge>
                     </Link>
+                    {username && <p className={`${classes.logout} ${classes.non__mobile}`} onClick={logout}>LOGOUT</p>}
                     <div className={classes.mobile} onClick={openMenu}>
                         <IconButton>
                             {!toggle && <MenuOutlined />}

@@ -53,6 +53,7 @@
 .icons {
     display: flex;
     column-gap: 5px;
+    align-items: center;
 }
 
 .link {
@@ -63,6 +64,20 @@
 
 .mobile {
     display: none;
+}
+
+.non__mobile {
+    display: block;
+}
+
+.logout {
+    cursor: pointer;
+    color: gray;
+}
+
+.logout:hover {
+    color: black;
+    border-bottom: solid 3px;
 }
 
 @media screen and (max-width:769px) {
@@ -92,5 +107,9 @@
 
     .mobile {
         display: block;
+    }
+
+    .non__mobile {
+        display: none;
     }
 }
