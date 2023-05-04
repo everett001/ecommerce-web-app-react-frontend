@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import classes from './Header.module.css';
 import {
     SearchOutlined,
@@ -15,6 +15,7 @@ import { userActions } from '../store/user';
 
 function Header() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [toggle, setToggle] = useState(false);
     const numberOfItems = useSelector(state => state.cart.totalNumberOfItems);
     const username = useSelector(state => state.user.user?.username);
@@ -27,6 +28,7 @@ function Header() {
         dispatch(
             userActions.setLogout()
         );
+        navigate("/");
     }
 
     return <>
